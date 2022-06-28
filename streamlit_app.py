@@ -1,2 +1,2 @@
 import streamlit
-stramlit.title('hello world')
+streamlit.title('hello world')
