@@ -1,5 +1,10 @@
 import streamlit
-# import pandas
+
+import pandas
+import requests
+import snowflake.connector
+from urllib.error import URLError
+
 streamlit.title('Business is business')
 
 streamlit.header('Organs left to smuggle')
@@ -26,10 +31,7 @@ streamlit.dataframe(fruityvice_normalized)
 # dont run anything above
 streamlit.stop()
 
-import pandas
-import requests
-import snowflake.connector
-from urllib.error import URLError
+# import pandas
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 my_cur.execute("SELECT * from fruit_load_list")
